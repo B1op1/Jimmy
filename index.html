@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Elektrotherm</title>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      href="assets/logo-round.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="styles/home.css" />
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const navContainer = document.querySelector(".nav-container");
+
+        window.addEventListener("scroll", function () {
+          if (window.scrollY === 0) {
+            navContainer.classList.add("enlarged");
+          } else {
+            navContainer.classList.remove("enlarged");
+          }
+        });
+
+        // Initial check
+        if (window.scrollY === 0) {
+          navContainer.classList.add("enlarged");
+        }
+      });
+    </script>
+    <script>
+      function sendMail() {
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        var subject = document.getElementById("subject").value;
+        var message = document.getElementById("message").value;
+
+        var mailtoLink =
+          "mailto:info@elektrotherm.be" +
+          "?subject=" +
+          encodeURIComponent(subject) +
+          "&body=" +
+          encodeURIComponent(message);
+
+        window.location.href = mailtoLink;
+      }
+    </script>
+  </head>
+  <body>
+    <nav id="home">
+      <div class="nav-container">
+        <img src="assets/logo.jpg" alt="ERROR" />
+        <div class="nav-links" id="nav-links">
+          <div class="links">
+            <a href="#home">Home</a>
+            <a href="#sanitair">Sanitair</a>
+            <a href="#renovaties">Renovaties</a>
+            <a href="#verwarming">Verwarming</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </div>
+        <details class="dropdown">
+          <summary role="button">
+            <a class="button"><i class='bx bx-menu' ></i></a>
+          </summary>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#sanitair">Sanitair</a></li>
+            <li><a href="#renovaties">Renovaties</a></li>
+            <li><a href="#verwarming">Verwarming</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+      </details>
+      </div>
+    </nav>
+    <div class="main-container">
+        <div class="main-intro">
+          <div class="intro-container">
+            <div class="slider">
+              <div class="sliding">
+                <img src="assets/vb.png" alt="ERROR" />
+              </div>
+              <div class="sliding">
+                <img src="assets/vbs.png" alt="ERROR" />
+              </div>
+              <div class="sliding">
+                <img src="assets/vbr.png" alt="ERROR" />
+              </div>
+              <div class="sliding">
+                <img src="assets/vbt.png" alt="ERROR" />
+              </div>
+            </div>
+          </div>
+          <i class='prev bx bx-chevron-left' ></i></i>
+          <i class='next bx bx-chevron-right'></i>
+        </div>
+
+      <div class="specialiteiten-grid">
+        <div class="specialiteit">
+          <img src="assets/sanitair-logo.png" alt="ERROR" />
+          <a href="#sanitair">Sanitair</a>
+        </div>
+        <div class="specialiteit">
+          <img src="assets/renovaties-logo.png" alt="ERROR" /> 
+         <a href="#renovaties">Renovaties</a>
+        </div>
+        <div class="specialiteit">
+          <img src="assets/verwarming-logo.png" alt="ERROR" />
+          <a href="#verwarming">Verwarming</a>
+        </div>
+      </div>
+      <div class="about-container">
+        <div class="about-info">
+          <h4>Wat kan ik allemaal verkrijgen?</h4>
+          <h5>
+            Bij ElektroTherm kunt u terecht bij problemen in verband met
+            verwarming installaties en zelfs renovaties!
+          </h5>
+          <h5>Wij staan er voor jullie klaar om te helpen</h5>
+          <h4>*TITLU*</h4>
+          <h5>Wij maken alles weer luxe voor u in een korte tijd!</h5>
+        </div>
+      </div>
+      <div id="sanitair" class="sanitair-container">
+        <div class="sanitair-intro">
+          <h3>Sanitair</h3>
+        </div>
+        <div class="big-sanitair">
+          <div class="sanitair-info">
+            <h4>Sanitair</h4>
+            <p>Ontdek ons assortiment sanitair, van moderne kranen tot elegante badkameraccessoires. Wij bieden hoogwaardige oplossingen voor een stijlvolle en functionele badkamerervaring.</p>
+            <img src="assets/vbs.png" alt="">
+            <p>Nieuw leven in uw badkamer brengen is ons vak. Bij ons vindt u een uitgebreid assortiment aan hoogwaardig sanitair, van tijdloze kranen tot moderne douchecabines en alles daartussenin. Wij streven ernaar om uw badkamer te transformeren tot een oase van comfort en stijl, met producten die niet alleen mooi zijn, maar ook functioneel en duurzaam. Onze aanpak is gericht op het leveren van uitmuntendheid in ontwerp en service, waarbij we nauw met u samenwerken om uw visie tot leven te brengen. Kies voor ons vakmanschap en ervaar een badkamer die perfect past bij uw levensstijl.</p>
+            <h4>*TITLU 2*</h4>
+            <p>*DESCRIERE 2*</p>
+            <img src="assets/vbr.png" alt="ERROR" />
+            <img src="assets/vb.png" alt="ERROR" />
+            <h4>*TITLU 3*</h4>
+            <h5>*DESCRIERE 3*</h5>
+            <img src="assets/vbt.png" alt="ERROR" />
+            <img src="assets/vbs.png" alt=ERROR" />
+          </div>
+       </div>
+      </div>
+      <div id="renovaties" class="renovaties-container">
+        <div class="renovaties-intro">
+          <h3>Renovaties</h3>
+        </div>
+        <div class="big-renovaties">
+          <div class="renovaties-info">
+            <h4>Sanitair</h4>
+            <p>DESCRIERE</p>
+            <img src="assets/vbs.png" alt="ERROR">
+            <p>DESCRIERE</p>
+            <h4>*TITLU 2*</h4>
+            <p>*DESCRIERE 2*</p>
+            <img src="assets/vbr.png" alt="ERROR" />
+            <img src="assets/vb.png" alt="ERROR" />
+            <h4>*TITLU 3*</h4>
+            <h5>*DESCRIERE 3*</h5>
+            <img src="assets/vbt.png" alt="ERROR" />
+            <img src="assets/vbs.png" alt="ERROR" />
+          </div>
+       </div>
+      </div>
+      <div id="verwarming" class="verwarming-container">
+        <div class="verwarming-intro">
+          <h3>Verwarming</h3>
+        </div>
+        <div class="big-verwarming">
+          <div class="verwarming-info">
+            <h4>Verwarming</h4>
+            <p>DESCRIERE</p>
+            <img src="assets/vbs.png" alt="">
+            <p>DESCRIERE</p>
+            <h4>*TITLU 2*</h4>
+            <p>*DESCRIERE 2*</p>
+            <img src="assets/vbr.png" alt="" />
+            <img src="assets/vb.png" alt="" />
+            <h4>*TITLU 3*</h4>
+            <h5>*DESCRIERE 3*</h5>
+            <img src="assets/vbt.png" alt="" />
+            <img src="assets/vbs.png" alt="" />
+          </div>
+       </div>
+      </div>
+      <div id="contact" class="contact-container">
+        <div class="contact-form-container">
+          <form onsubmit="sendMail(); return false;" class="contact-form">
+            <h2>Contact Us</h2>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required />
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required />
+
+            <label for="subject">Subject:</label>
+            <input type="text" id="subject" name="subject" required />
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="footer-content">
+        <p>
+          &copy; 2024 ElektroTherm │ All rights reserved │ All images are
+          property of the company
+        </p>
+        <nav class="footer-nav">
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#sanitair">Sanitair</a></li>
+            <li><a href="#renovaties">Renovaties</a></li>
+            <li><a href="#verwarming">Verwarming</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+    <script src="intro-slider.js"></script>
+    <script src="scroll.js"></script>
+    <script src="nav.js"></script>
+  </body>
+</html>

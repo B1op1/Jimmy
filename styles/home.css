@@ -1,0 +1,627 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/*      MAIN       */
+
+.main-container {
+  margin: 120px 0 0 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+h4 {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  color: rgba(79, 174, 205, 0.739);
+  font-size: 1.4rem;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  margin: 15px 20px;
+  text-align: center;
+}
+
+h5 {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  color: rgba(15, 16, 17, 0.739);
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin: 0 20px;
+}
+
+h6 {
+  color: rgba(15, 16, 17, 0.739);
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin: 0 20px;
+}
+
+p {
+  color: rgba(15, 16, 17, 0.739);
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin: 0 20px;
+}
+
+/*      NAV       */
+
+.nav-container {
+  z-index: 1000000;
+  width: 100%;
+  box-shadow: rgb(129, 129, 129) 3px 3px 6px 0px,
+    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+  height: 60px;
+  position: fixed;
+  top: 0;
+  background-color: white;
+}
+
+.nav-container.enlarged {
+  height: 120px;
+}
+
+.nav-container.enlarged a.button {
+  font-size: 1.9rem;
+  margin: 30px 80px 30px 0;
+}
+
+.nav-container.enlarged .dropdown li {
+  margin: 0 35px 0 0;
+}
+
+.nav-container img {
+  width: 150px;
+  margin: 0 auto 0 40px;
+  transition: all 0.3s ease;
+}
+
+.nav-container.enlarged img {
+  width: 210px;
+  margin-left: 20px;
+}
+
+.links a {
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+
+.nav-container.enlarged a {
+  font-size: 1.1rem;
+  margin-left: 20px;
+}
+
+.links a {
+  color: #18272f;
+  position: relative;
+  text-decoration: none;
+}
+
+.links a::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  width: 100%;
+  height: 3px;
+  border-radius: 1px;
+  background-color: #18272f;
+  bottom: 0;
+  left: 0;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform 0.5s cubic-bezier(0.01, 0, 0.1, 1);
+}
+
+.links a:hover::before {
+  transform-origin: left;
+  transform: scaleX(1);
+}
+
+/*      INTRO       */
+
+.main-intro {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 100%;
+  height: 60vh;
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.sliding {
+  flex: 0 0 100%;
+}
+
+.sliding img {
+  width: 100%;
+  display: block;
+}
+
+.sliding h5 h6 {
+  z-index: 100;
+  font-size: 2rem;
+  color: black;
+}
+
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgb(255, 255, 255);
+  font-size: 3.5rem;
+  z-index: 2;
+  transition: transform 0.3s ease;
+}
+
+.prev:hover,
+.next:hover {
+  color: gray;
+}
+
+.prev {
+  left: -50px;
+}
+
+.next {
+  right: -50px;
+}
+
+.main-intro:hover .prev {
+  left: 20px;
+}
+
+.main-intro:hover .next {
+  right: 20px;
+}
+
+/*    SPECIALITEITEN    */
+
+.specialiteiten-grid {
+  margin: 100px 0 0 0;
+  display: grid;
+  grid-template-columns: 150px 150px 150px;
+  grid-template-rows: 150px;
+  gap: 30px;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 1000px) {
+  .specialiteiten-grid {
+    display: grid;
+    grid-template-columns: 150px 150px;
+    grid-template-rows: 150px;
+    gap: 50px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .specialiteiten-grid {
+    display: grid;
+    grid-template-columns: 150px;
+    grid-template-rows: 150px 150px 150px;
+    gap: 50px;
+    margin: 100px 30%;
+  }
+}
+
+.specialiteit {
+  display: grid;
+  grid-template-columns: 150px;
+  grid-template-rows: 150px 20px;
+}
+
+.specialiteit a {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  margin: 15px 0 0 0;
+  font-size: 1.6rem;
+  color: rgb(89, 210, 251);
+  font-weight: 500;
+}
+
+.specialiteiten-grid img {
+  background-color: #78b4e8;
+  height: 150px;
+  width: 150px;
+  border-radius: 75px;
+}
+
+/*    ABOUT    */
+
+.about-container {
+  display: flex;
+  justify-content: center;
+}
+
+.about-info {
+  width: 500px;
+  margin: 100px 0;
+}
+
+/*    SANITAIR    */
+
+.sanitair-container {
+  position: relative;
+}
+
+.big-sanitair {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.sanitair-intro {
+  box-shadow: rgb(123, 123, 123) 1px 1px 3px 0px inset,
+    rgba(255, 255, 255, 0.5) -1px -1px 3px 0.5px inset;
+
+  background: url("https://www.iverschueren.be/images/hvac-producten/installatie-sanitair-particulier%20(3).JPG")
+    no-repeat center center/cover;
+  height: 40vh;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 3em;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.sanitair-info {
+  background-color: white;
+  padding: 20px;
+  width: 600px;
+  margin: 0 auto;
+}
+
+.sanitair-info img:first-of-type {
+  width: 500px;
+  height: 300px;
+}
+
+.sanitair-info img {
+  width: 200px;
+  height: 200px;
+  margin: 20px 20px;
+}
+
+/*    RENOVATIES    */
+
+.renovaties-container {
+  position: relative;
+}
+
+.big-renovaties {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.renovaties-intro {
+  box-shadow: rgb(123, 123, 123) 1px 1px 3px 0px inset,
+    rgba(255, 255, 255, 0.5) -1px -1px 3px 0.5px inset;
+
+  background: url("https://tilburg.com/wp-content/uploads/2024/04/Kies-de-juiste-aannemer-voor-jouw-renovatie.jpg")
+    no-repeat center center/cover;
+  height: 40vh;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 3em;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.renovaties-info {
+  background-color: white;
+  padding: 20px;
+  width: 600px;
+  margin: 0 auto;
+}
+
+.renovaties-info img:first-of-type {
+  width: 500px;
+  height: 300px;
+}
+
+.renovaties-info img {
+  width: 200px;
+  height: 200px;
+  margin: 10px 20px;
+}
+
+/*    VERWARMING    */
+
+.verwarming-container {
+  position: relative;
+}
+
+.big-verwarming {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.verwarming-intro {
+  box-shadow: rgb(123, 123, 123) 1px 1px 3px 0px inset,
+    rgba(255, 255, 255, 0.5) -1px -1px 3px 0.5px inset;
+
+  background: url("https://www.centraleverwarmingcv.be/wp-content/uploads/convector-vloer.jpg")
+    no-repeat center center/cover;
+  height: 40vh;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 3em;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.verwarming-info {
+  background-color: white;
+  padding: 20px;
+  width: 600px;
+  margin: 0 auto;
+}
+
+.verwarming-info img:first-of-type {
+  width: 500px;
+  height: 300px;
+}
+
+.verwarming-info img {
+  width: 200px;
+  height: 200px;
+  margin: 10px 20px;
+}
+
+/*      CONTACT       */
+
+.contact-container {
+  display: flex;
+  justify-content: center;
+}
+
+.contact-form-container {
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  width: 100%;
+  max-width: 500px;
+  margin: 100px 0 50px 0;
+}
+
+.contact-form h2 {
+  margin-bottom: 15px;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.contact-form button {
+  background-color: #5cb85c;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background-color: #4cae4c;
+}
+
+/*      FOOTER       */
+
+.footer {
+  background-color: #2c3e50;
+  color: #ecf0f1;
+  padding: 20px 0;
+  text-align: center;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer p {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+}
+
+.footer-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-nav li {
+  margin: 0 15px;
+}
+
+.footer-nav a {
+  color: #ecf0f1;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-nav a:hover {
+  text-decoration: underline;
+}
+
+/*          RESPONSIVE          */
+@media only screen and (max-width: 850px) {
+}
+
+@media only screen and (max-width: 850px) {
+  .nav-links {
+    opacity: 0;
+  }
+}
+
+@media only screen and (min-width: 850px) {
+  .dropdown {
+    opacity: 0;
+  }
+}
+
+/*      INTRO       */
+
+/*  NAV */
+:root {
+  --button-background: dodgerblue;
+  --button-color: white;
+
+  --dropdown-highlight: dodgerblue;
+  --dropdown-width: 160px;
+  --dropdown-background: rgb(240, 240, 240);
+  --dropdown-color: black;
+}
+
+a.button {
+  display: inline-block;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin: 0 80px 0 0;
+}
+
+a.button:active {
+  filter: brightness(75%);
+}
+
+/* Dropdown styles */
+.dropdown {
+  position: relative;
+  padding: 0;
+  margin-right: 1em;
+
+  border: none;
+}
+
+.dropdown summary {
+  list-style: none;
+  list-style-type: none;
+}
+
+.dropdown > summary::-webkit-details-marker {
+  display: none;
+}
+
+.dropdown summary:focus {
+  outline: none;
+}
+
+.dropdown ul {
+  position: absolute;
+  margin: 20px 0 0 0;
+  padding: 20px 0;
+  width: var(--dropdown-width);
+  left: 20%;
+  margin-left: calc((var(--dropdown-width) / 2) * -1);
+  box-sizing: border-box;
+  z-index: 500;
+  background: var(--dropdown-background);
+  border-radius: 6px;
+  list-style: none;
+}
+
+.dropdown ul li {
+  padding: 0;
+  margin: 0 10px 0 10px;
+}
+
+.dropdown ul li a:link,
+.dropdown ul li a:visited {
+  display: inline-block;
+  padding: 10px 0.8rem;
+  width: 100%;
+  box-sizing: border-box;
+  color: var(--dropdown-color);
+  text-decoration: none;
+}
+
+.dropdown ul li a:hover {
+  background-color: var(--dropdown-highlight);
+  color: var(--dropdown-background);
+}
+
+/* Dropdown triangle */
+.dropdown ul::before {
+  content: " ";
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: -10px;
+  left: 20%;
+  margin-left: -10px;
+  border-style: solid;
+  border-width: 0 10px 10px 10px;
+  border-color: transparent transparent var(--dropdown-background) transparent;
+}
+
+/* Close the dropdown with outside clicks */
+.dropdown > summary::before {
+  display: none;
+}
+
+.dropdown[open] > summary::before {
+  content: " ";
+  display: block;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+}
