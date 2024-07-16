@@ -129,7 +129,7 @@ p {
 }
 
 .links a {
-  margin: 5px;
+  margin: 0 10px;
   transition: all 0.3s ease;
 }
 
@@ -138,10 +138,20 @@ p {
   margin-left: 20px;
 }
 
+.links a:first-of-type {
+  color: rgb(7, 152, 255);
+  font-weight: 600;
+}
+
 .links a {
   color: #18272f;
   position: relative;
   text-decoration: none;
+}
+
+.links a:last-of-type {
+  color: rgb(255, 7, 7);
+  font-weight: 600;
 }
 
 .links a::before {
@@ -269,10 +279,14 @@ p {
 
 /*    SPECIALITEITEN    */
 
+.specialiteiten-huge {
+  margin: 50px auto 10px auto;
+}
+
 .specialiteiten-grid {
-  margin: 100px 0 0 0;
+  margin: 0 auto;
   display: grid;
-  grid-template-columns: 150px 150px 150px;
+  grid-template-columns: 150px 150px 150px 150px;
   grid-template-rows: 150px;
   gap: 30px;
   justify-content: center;
@@ -363,7 +377,8 @@ p {
 @media only screen and (max-width: 850px) {
   .sanitair-container .sanitair-intro,
   .renovaties-container .renovaties-intro,
-  .verwarming-container .verwarming-intro {
+  .verwarming-container .verwarming-intro,
+  .elektriciteit-container .elektriciteit-intro {
     background-size: cover !important; /* Ensure the image covers the entire section */
     background-position: center !important; /* Center the image */
     background-attachment: scroll !important; /* Make the image scroll with the content */
@@ -372,7 +387,8 @@ p {
 
   .sanitair-intro h3,
   .renovaties-intro h3,
-  .verwarming-intro h3 {
+  .verwarming-intro h3,
+  .elektriciteit-into h3 {
     font-size: 1.2rem;
   }
 }
@@ -591,6 +607,94 @@ p {
     margin: 15px auto;
     width: 80%;
     height: 60vh;
+  }
+}
+
+/*    ELEKTRICITEIT   */
+
+.elektriciteit-container {
+  position: relative;
+}
+
+.big-elektriciteit {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.elektriciteit-intro {
+  box-shadow: rgb(123, 123, 123) 1px 1px 3px 0px inset,
+    rgba(255, 255, 255, 0.5) -1px -1px 3px 0.5px inset;
+  background: url("../assets/elektriciteit1.jpg") no-repeat center center/cover;
+  height: 40vh;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 3em;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.elektriciteit-info {
+  background-color: white;
+  padding: 20px;
+  width: 60vw;
+  margin: 0 auto;
+}
+
+@media only screen and (max-width: 1200px) {
+  .elektriciteit-info {
+    width: 55vw;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .elektriciteit-info {
+    width: 75vw;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .elektriciteit-info {
+    width: 95%;
+  }
+}
+
+.elektriciteit-info img:first-of-type {
+  width: 95%;
+  height: auto;
+}
+
+.elektriciteit-info img {
+  margin: 15px auto;
+  width: 20vw;
+  height: 20vw;
+  margin: 20px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .elektriciteit-info img {
+    margin: 15px auto;
+    width: 40vw;
+    height: 40vw;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .elektriciteit-info img {
+    margin: 15px auto;
+    width: 50vw; /* Use vw unit for width */
+    height: 50vw; /* Use vw unit for height */
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .elektriciteit-info img {
+    margin: 15px auto;
+    width: 80vw; /* Use vw unit for width */
+    height: 80vw; /* Use vw unit for height */
   }
 }
 
