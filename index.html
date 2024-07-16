@@ -16,21 +16,22 @@
     <link rel="stylesheet" href="styles/home.css" />
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        const navContainer = document.querySelector(".nav-container");
+  const navContainer = document.querySelector(".nav-container");
+  const homeLinks = document.querySelectorAll('a[href="#home"]'); // Select all Home links
 
-        window.addEventListener("scroll", function () {
-          if (window.scrollY === 0) {
-            navContainer.classList.add("enlarged");
-          } else {
-            navContainer.classList.remove("enlarged");
-          }
-        });
+  const enlargeNavOnScroll = () => {
+    if (window.scrollY === 0) {
+      navContainer.classList.add("enlarged");
+    } else {
+      navContainer.classList.remove("enlarged");
+    }
+  };
 
-        // Initial check
-        if (window.scrollY === 0) {
-          navContainer.classList.add("enlarged");
-        }
-      });
+  window.addEventListener("scroll", enlargeNavOnScroll);
+
+  // Initial check
+  enlargeNavOnScroll();
+});
     </script>
     <script>
       function sendMail() {
@@ -61,6 +62,7 @@
             <a href="#sanitair">Sanitair</a>
             <a href="#renovaties">Renovaties</a>
             <a href="#verwarming">Verwarming</a>
+            <a href="#elektriciteit">Elektriciteit</a>
             <a href="#contact">Contact</a>
           </div>
         </div>
@@ -73,12 +75,13 @@
             <li><a href="#sanitair">Sanitair</a></li>
             <li><a href="#renovaties">Renovaties</a></li>
             <li><a href="#verwarming">Verwarming</a></li>
+            <li><a href="#elektriciteit">Elektriciteit</a></li>
             <li><a href="#contact">Contact</a></li>
-        </ul>
-      </details>
+          </ul>
+        </details>
       </div>
     </nav>
-   <div class="main-container">
+    <div class="main-container">
         <div class="main-intro">
           <div class="intro-container">
             <div class="slider">
@@ -97,7 +100,7 @@
           <i class='prev bx bx-chevron-left' ></i></i>
           <i class='next bx bx-chevron-right'></i>
         </div>
-
+        <div class="specialiteiten-huge"><h4>Elektrotherm is gespecialiseerd in</h4></div>
       <div class="specialiteiten-grid">
         <div class="specialiteit">
           <img src="assets/sanitair-logo.png" alt="ERROR" />
@@ -111,10 +114,13 @@
           <img src="assets/verwarming-logo.png" alt="ERROR" />
           <a href="#verwarming">Verwarming</a>
         </div>
+        <div class="specialiteit">
+          <img src="assets/elek-logo.png" alt="ERROR" />
+          <a href="#elektriciteit">Elektriciteit</a>
+        </div>
       </div>
       <div class="about-container">
         <div class="about-info">
-          <h4>Wat kan ik allemaal verkrijgen?</h4>
           <h5>
             Bij ElektroTherm kunt u terecht bij problemen in verband met
             verwarming installaties en zelfs renovaties!
@@ -174,7 +180,7 @@
           <div class="verwarming-info">
             <h4>Verwarming</h4>
             <p>DESCRIERE</p>
-            <img src="assets/verwarming1.jpg" alt="">
+            <img src="" alt="">
             <p>DESCRIERE</p>
             <h4>*TITLU 2*</h4>
             <p>*DESCRIERE 2*</p>
@@ -184,6 +190,27 @@
             <h5>*DESCRIERE 3*</h5>
             <img src="assets/vbt.png" alt="" />
             <img src="assets/vbs.png" alt="" />
+          </div>
+       </div>
+      </div>
+      <div id="elektriciteit" class="elektriciteit-container">
+        <div class="elektriciteit-intro">
+          <h3>Elektriciteit</h3>
+        </div>
+        <div class="big-elektriciteit">
+          <div class="elektriciteit-info">
+            <h4>Elektriciteit</h4>
+            <p>DESCRIERE</p>
+            <img src="assets/vbs.png" alt="ERROR">
+            <p>DESCRIERE</p>
+            <h4>*TITLU 2*</h4>
+            <p>*DESCRIERE 2*</p>
+            <img src="assets/vbr.png" alt="ERROR" />
+            <img src="assets/vb.png" alt="ERROR" />
+            <h4>*TITLU 3*</h4>
+            <h5>*DESCRIERE 3*</h5>
+            <img src="assets/vbt.png" alt="ERROR" />
+            <img src="assets/vbs.png" alt="ERROR" />
           </div>
        </div>
       </div>
