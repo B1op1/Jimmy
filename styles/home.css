@@ -176,32 +176,66 @@ p {
 .slider {
   display: flex;
   transition: transform 0.5s ease;
+  box-shadow: rgb(123, 123, 123) 1px 1px 3px 0px inset,
+    rgba(255, 255, 255, 0.5) -1px -1px 3px 0.5px inset;
 }
 
 .sliding {
   flex: 0 0 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: 60vh;
 }
 
-.sliding img {
-  width: 100vw;
-  display: block;
+.sliding1 {
+  background-color: red;
 }
 
-.sliding h5 h6 {
-  z-index: 100;
+.sliding1 p:first-of-type {
+  font-size: 1.3rem;
+}
+
+.sliding1 p {
   font-size: 2rem;
-  color: black;
+  font-weight: 600;
+  margin: 0 auto;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  color: rgb(215, 215, 215);
+}
+
+.sliding2 {
+  background-color: rgb(74, 74, 255);
+}
+
+.sliding3 {
+  background-color: rgb(74, 255, 80);
+}
+
+.sliding4 {
+  background-color: rgb(255, 74, 234);
 }
 
 .prev,
 .next {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
+  opacity: 0;
   color: rgb(255, 255, 255);
   font-size: 3.5rem;
   z-index: 2;
   transition: transform 0.3s ease;
+}
+
+.prev {
+  left: 20px;
+}
+
+.next {
+  right: 20px;
 }
 
 .prev:hover,
@@ -209,20 +243,12 @@ p {
   color: gray;
 }
 
-.prev {
-  left: -50px;
-}
-
-.next {
-  right: -50px;
-}
-
 .main-intro:hover .prev {
-  left: 20px;
+  opacity: 1;
 }
 
 .main-intro:hover .next {
-  right: 20px;
+  opacity: 1;
 }
 
 @media only screen and (max-width: 850px) {
@@ -358,12 +384,6 @@ p {
   margin: 0 auto;
 }
 
-@media only screen and (max-width: 1400px) {
-  .sanitair-info {
-    width: 45vw;
-  }
-}
-
 @media only screen and (max-width: 1200px) {
   .sanitair-info {
     width: 55vw;
@@ -388,16 +408,33 @@ p {
 }
 
 .sanitair-info img {
-  width: 40%;
-  height: 40vh;
+  margin: 15px auto;
+  width: 20vw;
+  height: 20vw;
   margin: 20px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .sanitair-info img {
+    margin: 15px auto;
+    width: 40vw;
+    height: 40vw;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .sanitair-info img {
+    margin: 15px auto;
+    width: 50vw; /* Use vw unit for width */
+    height: 50vw; /* Use vw unit for height */
+  }
 }
 
 @media only screen and (max-width: 850px) {
   .sanitair-info img {
     margin: 15px auto;
-    width: 80%;
-    height: auto;
+    width: 80vw; /* Use vw unit for width */
+    height: 80vw; /* Use vw unit for height */
   }
 }
 
@@ -495,7 +532,7 @@ p {
   box-shadow: rgb(123, 123, 123) 1px 1px 3px 0px inset,
     rgba(255, 255, 255, 0.5) -1px -1px 3px 0.5px inset;
 
-  background: url("../assets/verwarming1.jpg") no-repeat center center/cover;
+  background: url("..assets/verwarming1.jpg") no-repeat center center/cover;
   height: 40vh;
   background-attachment: fixed;
   display: flex;
@@ -653,7 +690,13 @@ p {
 }
 
 /*          RESPONSIVE          */
-@media only screen and (max-width: 850px) {
+@media only screen and (max-width: 1000px) {
+  .footer-nav ul {
+    display: flex;
+    flex-direction: column;
+    margin: 10px auto;
+    align-items: flex-start;
+  }
 }
 
 @media only screen and (max-width: 850px) {
