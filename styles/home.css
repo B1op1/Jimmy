@@ -519,16 +519,33 @@ p {
 }
 
 .renovaties-info img {
-  width: 40%;
-  height: 40vh;
+  margin: 15px auto;
+  width: 20vw;
+  height: 20vw;
   margin: 20px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .renovaties-info img {
+    margin: 15px auto;
+    width: 40vw;
+    height: 40vw;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .renovaties-info img {
+    margin: 15px auto;
+    width: 50vw; /* Use vw unit for width */
+    height: 50vw; /* Use vw unit for height */
+  }
 }
 
 @media only screen and (max-width: 850px) {
   .renovaties-info img {
     margin: 15px auto;
-    width: 80%;
-    height: 60vh;
+    width: 80vw; /* Use vw unit for width */
+    height: 80vw; /* Use vw unit for height */
   }
 }
 
@@ -597,16 +614,33 @@ p {
 }
 
 .verwarming-info img {
-  width: 40%;
-  height: 40vh;
+  margin: 15px auto;
+  width: 20vw;
+  height: 20vw;
   margin: 20px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .verwarming-info img {
+    margin: 15px auto;
+    width: 40vw;
+    height: 40vw;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .verwarming-info img {
+    margin: 15px auto;
+    width: 50vw; /* Use vw unit for width */
+    height: 50vw; /* Use vw unit for height */
+  }
 }
 
 @media only screen and (max-width: 850px) {
   .verwarming-info img {
     margin: 15px auto;
-    width: 80%;
-    height: 60vh;
+    width: 80vw; /* Use vw unit for width */
+    height: 80vw; /* Use vw unit for height */
   }
 }
 
