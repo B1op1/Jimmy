@@ -201,6 +201,11 @@ p {
   height: 60vh;
 }
 
+.sliding img {
+  width: 100%;
+  z-index: -10;
+}
+
 .sliding1 {
   background-color: red;
 }
@@ -216,18 +221,6 @@ p {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
   color: rgb(215, 215, 215);
-}
-
-.sliding2 {
-  background-color: rgb(74, 74, 255);
-}
-
-.sliding3 {
-  background-color: rgb(74, 255, 80);
-}
-
-.sliding4 {
-  background-color: rgb(255, 74, 234);
 }
 
 .prev,
@@ -362,7 +355,7 @@ p {
 .sanitair-intro {
   box-shadow: rgb(123, 123, 123) 1px 1px 3px 0px inset,
     rgba(255, 255, 255, 0.5) -1px -1px 3px 0.5px inset;
-  background: url("../assets/sanitair1.jpg") no-repeat center center/cover;
+  background: url("../assets/sanitair-intro.jpeg") no-repeat center center/cover;
   height: 40vh;
   background-attachment: fixed;
   display: flex;
