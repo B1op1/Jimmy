@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cookies</title>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      href="assets/logo-round.png"
+      type="image/x-icon"
+    />
+    <style>
+      /* Basic styling for the data usage page */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f7f7f7;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        position: relative; /* Allows positioning of the home button */
+      }
+
+      .container {
+        background-color: white;
+        padding: 30px;
+        max-width: 600px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        text-align: center;
+        position: relative;
+      }
+
+      h2 {
+        color: #333;
+        margin-bottom: 20px;
+      }
+
+      p {
+        font-size: 16px;
+        color: #666;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+
+      /* Switch styling */
+      .switch-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+      }
+
+      .switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+      }
+
+      .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        transition: 0.4s;
+        border-radius: 34px;
+      }
+
+      .slider:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        border-radius: 50%;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        transition: 0.4s;
+      }
+
+      input:checked + .slider {
+        background-color: #28a745;
+      }
+
+      input:checked + .slider:before {
+        transform: translateX(26px);
+      }
+
+      /* Home button styling */
+      .home-btn {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        background-color: #ffffff;
+        border: none;
+        border-radius: 50%;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 1000;
+      }
+
+      .bx {
+        color: black;
+        font-size: 1.7rem;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="home-btn" onclick="window.location.href='index.html'">
+      <i class="bx bx-arrow-back"></i>
+    </button>
+
+    <div class="container">
+      <h2>Hoe We Uw Gegevens Gebruiken</h2>
+      <p>
+        We verzamelen uw e-mailadres alleen om te reageren op uw aanvragen via
+        ons contactformulier. We gebruiken uw e-mail niet voor marketing- of
+        reclame-doeleinden, noch delen we deze met derden.
+      </p>
+      <p>Cookies uitschakelen zal uw toegang tot deze website limiteren.</p>
+      <p id="cookie-status-message">
+        <!-- Status message will be inserted here -->
+      </p>
+
+      <div class="switch-container">
+        <label class="switch">
+          <input type="checkbox" id="cookie-switch" />
+          <span class="slider"></span>
+        </label>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const cookieSwitch = document.getElementById("cookie-switch");
+        const cookieStatusMessage = document.getElementById(
+          "cookie-status-message"
+        );
+
+        // Function to update cookie consent status and handle switch state
+        function updateCookieStatus(status) {
+          localStorage.setItem("cookieConsent", status);
+          cookieStatusMessage.textContent =
+            status === "accepted"
+              ? "Cookies zijn ingeschakeld. Zet de schakelaar uit om cookies uit te schakelen."
+              : "Cookies zijn uitgeschakeld. Zet de schakelaar in om cookies opnieuw in te schakelen.";
+        }
+
+        // Initialize the switch and message based on current consent status
+        function initializeCookieSettings() {
+          const cookieConsent = localStorage.getItem("cookieConsent");
+          if (cookieConsent === "accepted") {
+            cookieSwitch.checked = true;
+            cookieStatusMessage.textContent =
+              "Cookies zijn ingeschakeld. Zet de schakelaar uit om cookies uit te schakelen.";
+          } else {
+            cookieSwitch.checked = false;
+            cookieStatusMessage.textContent =
+              "Cookies zijn uitgeschakeld. Zet de schakelaar in om cookies opnieuw in te schakelen.";
+          }
+        }
+
+        // Initialize settings on page load
+        initializeCookieSettings();
+
+        // Handle switch change immediately
+        cookieSwitch.addEventListener("change", function () {
+          const isChecked = cookieSwitch.checked;
+          const newStatus = isChecked ? "accepted" : "rejected";
+          updateCookieStatus(newStatus);
+
+          // Change switch state instantly
+          document.querySelector(".slider").style.transition = "none"; // Disable transition
+          cookieSwitch.checked = isChecked;
+          setTimeout(() => {
+            document.querySelector(".slider").style.transition = ".4s"; // Re-enable transition
+            // Show a notification about the change
+            alert(
+              isChecked
+                ? "Cookies zijn opnieuw ingeschakeld. U kunt nu volledig gebruik maken van de site."
+                : "Cookies zijn uitgeschakeld. U kunt de site niet volledig gebruiken."
+            );
+            // Trigger a storage event to update contact form visibility in other open tabs
+            window.dispatchEvent(new Event("storage"));
+          }, 100); // Delay to ensure the switch transition is visually updated
+        });
+      });
+    </script>
+  </body>
+</html>
