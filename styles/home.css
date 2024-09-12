@@ -64,13 +64,12 @@ p {
   max-width: 90vw;
 }
 
-/* Adjust elements on mobile devices */
 @media only screen and (max-width: 850px) {
   h4,
   h5,
   h6,
   p {
-    max-width: 90vw; /* Ensure content fits within the viewport */
+    max-width: 90vw;
   }
 }
 
@@ -367,7 +366,6 @@ p {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-/* Adjust background images on mobile devices */
 @media only screen and (max-width: 850px) {
   .sanitair-container .sanitair-intro,
   .renovaties-container .renovaties-intro,
@@ -385,7 +383,7 @@ p {
   .verwarming-intro h3,
   .elektriciteit-into h3,
   .metaalbouw-intro h3 {
-    font-size: 1.2rem;
+    font-size: 2.3rem;
   }
 }
 
@@ -402,9 +400,15 @@ p {
   }
 }
 
-@media only screen and (max-width: 850px) {
+@media only screen and (max-width: 1000px) {
   .sanitair-info {
-    width: 60%;
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .sanitair-info p {
+    width: 90%;
   }
 }
 
@@ -475,13 +479,7 @@ p {
 
 @media only screen and (max-width: 1000px) {
   .renovaties-info {
-    width: 60vw;
-  }
-}
-
-@media only screen and (max-width: 850px) {
-  .renovaties-info {
-    width: 60%;
+    width: 90%;
   }
 }
 
@@ -552,13 +550,7 @@ p {
 
 @media only screen and (max-width: 1000px) {
   .verwarming-info {
-    width: 60vw;
-  }
-}
-
-@media only screen and (max-width: 850px) {
-  .verwamring-info {
-    width: 60%;
+    width: 90%;
   }
 }
 
@@ -626,13 +618,7 @@ p {
 
 @media only screen and (max-width: 1000px) {
   .elektriciteit-info {
-    width: 60vw;
-  }
-}
-
-@media only screen and (max-width: 850px) {
-  .elektriciteit-info {
-    width: 60%;
+    width: 90%;
   }
 }
 
@@ -697,13 +683,7 @@ p {
 
 @media only screen and (max-width: 1000px) {
   .metaalbouw-info {
-    width: 60vw;
-  }
-}
-
-@media only screen and (max-width: 850px) {
-  .metaalbouw-info {
-    width: 60%;
+    width: 90%;
   }
 }
 
@@ -740,12 +720,12 @@ p {
 
 .contact-form-container {
   background-color: #fff;
-  padding: 20px 40px 20px 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   width: 100%;
   max-width: 500px;
   margin: 100px auto 50px auto;
+  padding: 5px;
 }
 
 .contact-form h2 {
@@ -760,9 +740,9 @@ p {
 
 .contact-form input,
 .contact-form textarea {
-  width: 100%;
+  width: 90%;
   padding: 10px;
-  margin-bottom: 15px;
+  margin: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
@@ -1032,6 +1012,7 @@ a.button:active {
 .accept {
   background-color: #4caf50;
   color: white;
+  width: 100px;
 }
 
 .accept:hover {
@@ -1042,6 +1023,8 @@ a.button:active {
 .reject {
   background-color: #f44336;
   color: white;
+  width: 100px;
+  margin-top: 5px;
 }
 
 .reject:hover {
