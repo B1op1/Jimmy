@@ -24,7 +24,7 @@
         justify-content: center;
         align-items: center;
         height: 100vh;
-        position: relative; /* Allows positioning of the home button */
+        position: relative;
       }
 
       .container {
@@ -102,7 +102,6 @@
         transform: translateX(26px);
       }
 
-      /* Home button styling */
       .home-btn {
         position: absolute;
         top: 20px;
@@ -123,6 +122,49 @@
       .bx {
         color: black;
         font-size: 1.7rem;
+      }
+
+      .cookie-banner {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        color: white;
+        padding: 20px;
+        text-align: center;
+        z-index: 1000;
+      }
+
+      .cookie-banner p {
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
+
+      .cookie-banner button {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        font-size: 14px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .accept-btn {
+        background-color: #28a745;
+        color: white;
+      }
+
+      .reject-btn {
+        background-color: #dc3545;
+        color: white;
+      }
+
+      .cookie-banner a {
+        margin-top: 15px;
+        color: #17a2b8;
+        text-decoration: none;
       }
     </style>
   </head>
