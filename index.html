@@ -170,7 +170,7 @@
         <div class="big-renovaties">
           <div class="renovaties-info">
             <h4>Sanitair</h4>
-            <p>DESCRIERE</p>
+            <p>Ontdek ons assortiment metaalbouw, van moderne kranen tot elegante badkameraccessoires. Wij bieden hoogwaardige oplossingen voor een stijlvolle en functionele badkamerervaring.</p>
             <p>DESCRIERE</p>
             <h4>*TITLU 2*</h4>
             <p>*DESCRIERE 2*</p>
@@ -192,7 +192,7 @@
             <img src="" alt="">
             <p>DESCRIERE</p>
             <h4>*TITLU 2*</h4>
-            <p>*DESCRIERE 2*</p>
+            <p>*Ontdek ons assortiment metaalbouw, van moderne kranen tot elegante badkameraccessoires. Wij bieden hoogwaardige oplossingen voor een stijlvolle en functionele badkamerervaring. 2*</p>
             <img src="assets/verwarming1.jpg" alt="ERROR" />
             <img src="assets/verwarming2.jpeg" alt="ERROR" />
             <h4>*TITLU 3*</h4>
@@ -209,7 +209,7 @@
         <div class="big-elektriciteit">
           <div class="elektriciteit-info">
             <h4>Elektriciteit</h4>
-            <p>DESCRIERE</p>
+            <p>Ontdek ons assortiment metaalbouw, van moderne kranen tot elegante badkameraccessoires. Wij bieden hoogwaardige oplossingen voor een stijlvolle en functionele badkamerervaring.</p>
             <h4>*TITLU 2*</h4>
             <p>*DESCRIERE 2*</p>
             <img src="assets/elektriciteit1.jpg" alt="ERROR" />
@@ -230,7 +230,7 @@
             <p>Ontdek ons assortiment metaalbouw, van moderne kranen tot elegante badkameraccessoires. Wij bieden hoogwaardige oplossingen voor een stijlvolle en functionele badkamerervaring.</p>
             <p>Nieuw leven in uw badkamer brengen is ons vak. Bij ons vindt u een uitgebreid assortiment aan hoogwaardig sanitair, van tijdloze kranen tot moderne douchecabines en alles daartussenin. Wij streven ernaar om uw badkamer te transformeren tot een oase van comfort en stijl, met producten die niet alleen mooi zijn, maar ook functioneel en duurzaam. Onze aanpak is gericht op het leveren van uitmuntendheid in ontwerp en service, waarbij we nauw met u samenwerken om uw visie tot leven te brengen. Kies voor ons vakmanschap en ervaar een badkamer die perfect past bij uw levensstijl.</p>
             <h4>*TITLU 2*</h4>
-            <p>*DESCRIERE 2*</p>
+            <p>*Ontdek ons assortiment metaalbouw, van moderne kranen tot elegante badkameraccessoires. Wij bieden hoogwaardige oplossingen voor een stijlvolle en functionele badkamerervaring. 2*</p>
             <h4>*TITLU 3*</h4>
             <h5>*DESCRIERE 3*</h5>
             <img src="assets/metaalbouw1.jpeg" alt="ERROR">
@@ -241,10 +241,26 @@
       <div id="cookie-banner" class="cookie-banner">
         <p>Deze website gebruikt cookies om een beste ervaring te verzekeren. Zo krijgt u de mogelijkheid om de volledige website te gebruiken. <a href="cookie.html">Meer info</a></p>
         <div class="cookie-btns">
-          <button id="accept-cookies" class="cookie-btn accept">Accept</button>
-          <button id="reject-cookies" class="cookie-btn reject">Reject</button>
+          <button id="accept-cookies" class="cookie-btn accept">Accepteren</button>
+          <button id="reject-cookies" class="cookie-btn reject">Weigeren</button>
         </div>
       </div>
+      <script>
+        function updateCookieText() {
+          const screenWidth = window.innerWidth;
+          const cookieText = document.querySelector(".cookie-banner p");
+      
+          if (screenWidth <= 1200) {
+            cookieText.innerHTML = "Deze website gebruikt cookies. <a href='cookie.html'>Meer info</a>"; // Text for small screens
+          } else {
+            cookieText.innerHTML = "Deze website gebruikt cookies om een beste ervaring te verzekeren. Zo krijgt u de mogelijkheid om de volledige website te gebruiken. <a href='cookie.html'>Meer info</a>";
+          }
+        }
+      
+        // Run the function on page load and when the window is resized
+        window.addEventListener('load', updateCookieText);
+        window.addEventListener('resize', updateCookieText);
+      </script>
       <div id="contact" class="contact-container"></div>
         <div class="contact-form-container">
           <form onsubmit="sendMail(); return false;" class="contact-form">
