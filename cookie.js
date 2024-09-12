@@ -27,13 +27,23 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // Check if user has already made a choice in the current session
-  if (!localStorage.getItem("cookieConsent")) {
-    setTimeout(showBanner, 1000); // Show banner after 1 second
-  } else {
-    // Initialize contact form visibility based on cookie consent status
-    updateContactFormVisibility();
+  // Function to check if the session is new (i.e., the site has been reopened)
+  function isSessionNew() {
+    return !sessionStorage.getItem("sessionActive");
   }
+
+  // Function to set session as active
+  function setSessionActive() {
+    sessionStorage.setItem("sessionActive", "true");
+  }
+
+  // Only show the banner if the session is new
+  if (isSessionNew()) {
+    setTimeout(showBanner, 1000); // Show the banner after 1 second
+  }
+
+  // Initialize contact form visibility based on cookie consent status
+  updateContactFormVisibility();
 
   // Accept cookies action
   acceptBtn.addEventListener("click", function () {
@@ -41,6 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
     banner.classList.remove("visible");
     setTimeout(() => banner.classList.add("hide"), 500); // Hide banner with transition
     updateContactFormVisibility(); // Update contact form visibility
+    setSessionActive(); // Mark session as active after accepting cookies
   });
 
   // Reject cookies action
@@ -49,6 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
     banner.classList.remove("visible");
     setTimeout(() => banner.classList.add("hide"), 500); // Hide banner with transition
     updateContactFormVisibility(); // Update contact form visibility
+    setSessionActive(); // Mark session as active after rejecting cookies
   });
 
   // Listen for storage events to update contact form visibility if cookies are changed in cookies.html
