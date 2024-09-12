@@ -728,6 +728,12 @@ p {
   padding: 5px;
 }
 
+@media only screen and (max-width: 1000px) {
+  .contact-form-container {
+    width: 90%;
+  }
+}
+
 .contact-form h2 {
   margin-bottom: 15px;
 }
