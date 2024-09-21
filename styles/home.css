@@ -177,7 +177,6 @@ p {
 
 .main-intro {
   position: relative;
-  overflow: hidden;
   width: 100vw;
   height: 60vh;
   overflow: hidden;
@@ -186,6 +185,7 @@ p {
 .slider {
   display: flex;
   transition: transform 0.5s ease;
+  width: 100%; /* No need to manually set the width, flex will handle it */
   box-shadow: rgb(123, 123, 123) 1px 1px 3px 0px inset,
     rgba(255, 255, 255, 0.5) -1px -1px 3px 0.5px inset;
 }
@@ -230,7 +230,8 @@ p {
   color: rgb(255, 255, 255);
   font-size: 3.5rem;
   z-index: 2;
-  transition: transform 0.3s ease;
+  transform: translateY(-50%);
+  transition: opacity 0.3s ease;
 }
 
 .prev {
@@ -246,10 +247,7 @@ p {
   color: gray;
 }
 
-.main-intro:hover .prev {
-  opacity: 1;
-}
-
+.main-intro:hover .prev,
 .main-intro:hover .next {
   opacity: 1;
 }
@@ -261,12 +259,6 @@ p {
 
   .next {
     right: 20px;
-  }
-  .nav-container img {
-    width: 120px;
-  }
-  .nav-container img.enlarged {
-    width: 180px;
   }
 }
 
@@ -716,16 +708,6 @@ p {
   display: flex;
   justify-content: center;
   background-color: lightgray;
-}
-
-.contact-form-container {
-  background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  width: 90%;
-  max-width: 500px;
-  margin: 100px auto 50px auto;
-  padding: 5px;
 }
 
 .contact-form h2 {
