@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const sliderContainer = document.querySelector(".slider-container");
   const slider = document.querySelector(".slider");
   const slides = document.querySelectorAll(".sliding");
   const prevBtn = document.querySelector(".prev");
@@ -8,9 +7,8 @@ document.addEventListener("DOMContentLoaded", function () {
   let currentIndex = 0;
   const totalSlides = slides.length;
   let autoSlideInterval;
-
   let startX = 0;
-  let endX = 0;
+  let isSwiping = false;
 
   function goToSlide(index) {
     if (index < 0) {
@@ -19,8 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
       index = 0;
     }
     currentIndex = index;
-    const translateValue = -currentIndex * 100 + "%";
-    slider.style.transform = `translateX(${translateValue})`;
+    slider.style.transform = `translateX(-${currentIndex * 100}%)`;
   }
 
   function startAutoSlide() {
@@ -33,36 +30,43 @@ document.addEventListener("DOMContentLoaded", function () {
     clearInterval(autoSlideInterval);
   }
 
-  function handleSwipe() {
-    if (startX > endX + 50) {
-      // Swipe left
-      goToSlide(currentIndex + 1);
-    } else if (startX < endX - 50) {
-      // Swipe right
-      goToSlide(currentIndex - 1);
+  function handleSwipe(endX) {
+    if (startX - endX > 50) {
+      goToSlide(currentIndex + 1); // Swipe left
+    } else if (endX - startX > 50) {
+      goToSlide(currentIndex - 1); // Swipe right
     }
   }
 
-  sliderContainer.addEventListener("touchstart", function (e) {
-    startX = e.touches[0].clientX;
+  slider.addEventListener("touchstart", function (event) {
+    startX = event.touches[0].clientX;
+    stopAutoSlide(); // Stop auto-slide when user interacts
+    isSwiping = true;
   });
 
-  sliderContainer.addEventListener("touchmove", function (e) {
-    endX = e.touches[0].clientX;
+  slider.addEventListener("touchmove", function (event) {
+    if (!isSwiping) return;
+    const endX = event.touches[0].clientX;
+    handleSwipe(endX);
+    isSwiping = false;
   });
 
-  sliderContainer.addEventListener("touchend", function () {
-    handleSwipe();
+  slider.addEventListener("touchend", function () {
+    startAutoSlide(); // Restart auto-slide after swipe
   });
 
-  prevBtn.addEventListener("click", function () {
+  prevBtn?.addEventListener("click", function () {
+    stopAutoSlide(); // Stop auto-slide on interaction
     goToSlide(currentIndex - 1);
+    startAutoSlide(); // Restart auto-slide after interaction
   });
 
-  nextBtn.addEventListener("click", function () {
+  nextBtn?.addEventListener("click", function () {
+    stopAutoSlide(); // Stop auto-slide on interaction
     goToSlide(currentIndex + 1);
+    startAutoSlide(); // Restart auto-slide after interaction
   });
 
-  // Start the auto slide
+  // Initialize auto-slide
   startAutoSlide();
 });
