@@ -9,6 +9,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const totalSlides = slides.length;
   let autoSlideInterval;
 
+  let startX = 0;
+  let endX = 0;
+
   function goToSlide(index) {
     if (index < 0) {
       index = totalSlides - 1;
@@ -29,6 +32,28 @@ document.addEventListener("DOMContentLoaded", function () {
   function stopAutoSlide() {
     clearInterval(autoSlideInterval);
   }
+
+  function handleSwipe() {
+    if (startX > endX + 50) {
+      // Swipe left
+      goToSlide(currentIndex + 1);
+    } else if (startX < endX - 50) {
+      // Swipe right
+      goToSlide(currentIndex - 1);
+    }
+  }
+
+  sliderContainer.addEventListener("touchstart", function (e) {
+    startX = e.touches[0].clientX;
+  });
+
+  sliderContainer.addEventListener("touchmove", function (e) {
+    endX = e.touches[0].clientX;
+  });
+
+  sliderContainer.addEventListener("touchend", function () {
+    handleSwipe();
+  });
 
   prevBtn.addEventListener("click", function () {
     goToSlide(currentIndex - 1);
