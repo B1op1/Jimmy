@@ -205,21 +205,71 @@ p {
   z-index: -10;
 }
 
-.sliding1 {
-  background-color: red;
+.sliding {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.sliding1 p:first-of-type {
+.sliding p:first-of-type {
   font-size: 1.3rem;
 }
 
-.sliding1 p {
+.sliding p {
   font-size: 2rem;
   font-weight: 600;
   margin: 0 auto;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
   color: rgb(215, 215, 215);
+}
+
+.sliding i {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 540;
+  color: rgb(34, 34, 34);
+  margin: 10px 0 0 0;
+}
+
+.sliding i:hover {
+  transition: 0.2s ease-in-out;
+}
+
+.sliding1 {
+  background-color: red;
+}
+
+.sliding1 i:hover {
+  color: rgb(63, 36, 239);
+}
+
+.sliding2 {
+  background-color: blue;
+}
+
+.sliding2 i:hover {
+  color: rgb(255, 0, 0);
+}
+
+.sliding3 {
+  background-color: blueviolet;
+}
+
+.sliding3 i:hover {
+  color: rgb(255, 0, 0);
+}
+
+.sliding4 {
+  background-color: rgb(255, 242, 0);
+}
+
+.sliding4 i:hover {
+  color: rgb(255, 0, 0);
+}
+
+.sliding4 p {
+  color: rgb(247, 58, 58);
 }
 
 .prev,
