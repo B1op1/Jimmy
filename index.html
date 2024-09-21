@@ -90,19 +90,22 @@
               <div class="sliding sliding1">
                 <p>Installatiebedrijf</p>
                 <p>Elektrotherm</p>
-              </div>
+                <i class='bx bxs-phone-outgoing' id="copyPhone" data-number="+32480656094">+32480656094</i>
+              </div>   
               <div class="sliding sliding2">
-                <p>Verwarming</p>
-                <p>Bij Elektrotherm kunt U voor uw verwarming terecht</p>
-                <img src="assets/verwarming-intro.jpg" alt="ERROR">
+                <p>Elektriciteit</p>
+                <p>Descriere scurta</p>
+                <i class='bx bxs-phone-outgoing' id="copyPhone" data-number="+32480656094">+32480656094</i>
               </div>
               <div class="sliding sliding3">
-                <p>Verwarming</p>
-                <p>Elektrotherm</p>
+                <p>Sanitair</p>
+                <p>Elektrotherm werkt op sanitair vlak.</p>
+                <i class='bx bxs-phone-outgoing' id="copyPhone" data-number="+32480656094">+32480656094</i>
               </div>
               <div class="sliding sliding4">
-                <p>Elektriciteit</p>
-                <p>Elektrotherm</p>
+                <p>Verwarming</p>
+                <p>Nieuwe radiatoren nodig?</p>
+                <i class='bx bxs-phone-outgoing' id="copyPhone" data-number="+32480656094">+32480656094</i>
               </div>
             </div>
           </div>
@@ -260,6 +263,32 @@
         // Run the function on page load and when the window is resized
         window.addEventListener('load', updateCookieText);
         window.addEventListener('resize', updateCookieText);
+      </script>
+      <script>document.addEventListener("DOMContentLoaded", function () {
+        const phoneIcon = document.getElementById("copyPhone");
+      
+        phoneIcon.addEventListener("click", function () {
+          const phoneNumber = phoneIcon.getAttribute("data-number");
+      
+          // Create a temporary input element to hold the phone number
+          const tempInput = document.createElement("input");
+          tempInput.style.position = "absolute";
+          tempInput.style.left = "-9999px";
+          tempInput.value = phoneNumber;
+          document.body.appendChild(tempInput);
+      
+          // Select the input value and copy it to the clipboard
+          tempInput.select();
+          tempInput.setSelectionRange(0, 99999); // For mobile devices
+          document.execCommand("copy");
+      
+          // Remove the temporary input element
+          document.body.removeChild(tempInput);
+      
+          // Optional: Notify the user that the number has been copied
+          alert("Nummer gekopieerd in klembord: " + phoneNumber);
+        });
+      });
       </script>
       <div id="contact" class="contact-container"></div>
         <div class="contact-form-container">
