@@ -173,6 +173,11 @@ p {
   transform: scaleX(1);
 }
 
+.nav-container i {
+  font-size: 1.5rem;
+  color: #2c3e50;
+}
+
 /*      INTRO       */
 
 .main-intro {
@@ -754,14 +759,35 @@ p {
 
 /*      CONTACT       */
 
-.contact-container {
-  display: flex;
-  justify-content: center;
-  background-color: lightgray;
+.contact-form {
+  width: 90%;
+  padding: 20px;
+  margin: 50px auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+@media only screen and (min-width: 800px) {
+  .contact-form {
+    width: 60%;
+  }
+}
+
+@media only screen and (min-width: 1100px) {
+  .contact-form {
+    width: 45%;
+  }
+}
+
+@media only screen and (min-width: 1300px) {
+  .contact-form {
+    width: 35%;
+  }
 }
 
 .contact-form h2 {
   margin-bottom: 15px;
+  text-align: center;
 }
 
 .contact-form label {
@@ -774,7 +800,7 @@ p {
 .contact-form textarea {
   width: 90%;
   padding: 10px;
-  margin: 10px;
+  margin: 10px 0;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
@@ -1062,10 +1088,6 @@ a.button:active {
 .reject:hover {
   color: lightgray;
   background-color: #e02a1d;
-}
-
-.contact-form-container {
-  position: relative; /* Ensures that the overlay is positioned relative to this container */
 }
 
 .contact-overlay {
