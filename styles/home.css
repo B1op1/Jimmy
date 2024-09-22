@@ -206,7 +206,8 @@ p {
 }
 
 @media only screen and (max-width: 1000px) {
-  .sliding {
+  .sliding,
+  .main-intro {
     height: 40vh;
   }
 }
@@ -311,16 +312,6 @@ p {
 .main-intro:hover .prev,
 .main-intro:hover .next {
   opacity: 1;
-}
-
-@media only screen and (max-width: 850px) {
-  .prev {
-    left: 20px;
-  }
-
-  .next {
-    right: 20px;
-  }
 }
 
 /*    SPECIALITEITEN    */
