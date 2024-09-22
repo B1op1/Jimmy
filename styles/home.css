@@ -208,7 +208,7 @@ p {
 @media only screen and (max-width: 1000px) {
   .sliding,
   .main-intro {
-    height: 40vh;
+    height: 50vh;
   }
 }
 
