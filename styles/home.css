@@ -205,6 +205,12 @@ p {
   height: 60vh;
 }
 
+@media only screen and (max-width: 1000px) {
+  .sliding {
+    height: 40vh;
+  }
+}
+
 .sliding img {
   width: 100%;
   z-index: -10;
